@@ -1,10 +1,16 @@
+import { Outlet } from "react-router-dom"
+import Home from "./Components/Pages/Home"
+import Navbar from "./Components/Navbar"
 
 
 function App() {
 
   return (
     <>
-      <h1  className="text-7xl mx-auto text-blue-950">hello world</h1>
+      <Navbar />
+      <Outlet>
+        <Home />
+      </Outlet>
     </>
   )
 }
