@@ -59,7 +59,7 @@ const Navbar = () => {
                     </button>
                 </div>
             </nav>
-            {/* social items for small screen */}
+            {/* nav items for small screen */}
             <div>
                 <ul className={`md:hidden block space-y-3 px-4 py-6 mt-14 bg-zinc-300   gap-12 text-lg ${isBarOpen ? "fixed top-0 right-0 left-0 w-full transition-all duration-200 ease-out" : "hidden"}`}>
                     {
