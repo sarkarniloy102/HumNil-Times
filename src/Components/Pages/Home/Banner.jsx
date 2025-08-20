@@ -3,6 +3,7 @@ import trendingImg from "../../../assets/about.png";
 /* eslint-disable no-unused-vars */
 import { motion } from "framer-motion";
 import TopicsTicker from "./TopicsTicker";
+import FloatingParticles from "../../Shared/FloatingParticle";
 
 const Banner = ({ title = "Stay ahead of the story.",
     subtitle = "Breaking news, deep dives, and daily briefs — curated for you.",
@@ -11,7 +12,7 @@ const Banner = ({ title = "Stay ahead of the story.",
 
     return (
 
-        <section className="bg-blue-950 text-zinc-200 overflow-hidden relative">
+        <section className=" bg-teal-700 text-zinc-200 overflow-hidden relative">
             <div className="relative z-10 mx-auto max-w-7xl px-6 py-20 sm:py-28 lg:flex lg:items-center lg:gap-10 lg:px-8">
                 {/* Left: Text */}
                 <div className="max-w-2xl">
@@ -32,7 +33,7 @@ const Banner = ({ title = "Stay ahead of the story.",
                         initial={{ y: 20, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ duration: 0.8, delay: 0.1 }}
-                        className="mt-5 text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl"
+                        className="mt-5 text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl "
                     >
                         {title}
                     </motion.h1>
@@ -96,7 +97,7 @@ const Banner = ({ title = "Stay ahead of the story.",
                 </motion.div>
 
             </div>
-
+            <FloatingParticles numberOfParticles={100} />
 
         </section>
 
