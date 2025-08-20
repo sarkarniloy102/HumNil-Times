@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-// import trendingImg from "../../../assets/about.png";
+import trendingImg from "../../../assets/about.png";
 /* eslint-disable no-unused-vars */
 import { motion } from "framer-motion";
 import TopicsTicker from "./TopicsTicker";
@@ -7,9 +7,7 @@ import TopicsTicker from "./TopicsTicker";
 const Banner = ({ title = "Stay ahead of the story.",
     subtitle = "Breaking news, deep dives, and daily briefs — curated for you.",
     Primary = "Start Reading",
-    Secondary = "Subscribe",
-    onPrimaryClick,
-    onSecondaryClick, }) => {
+    Secondary = "Subscribe", }) => {
 
     return (
 
@@ -65,6 +63,37 @@ const Banner = ({ title = "Stay ahead of the story.",
                 </div>
 
                 {/* Right side : image*/}
+                <motion.div
+                    initial={{ y: 30, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ duration: 0.9, delay: 0.2 }}
+                    className="relative mt-12 h-64 w-full max-w-xl flex-1 self-stretch rounded-3xl border border-white/10 bg-white/5 p-3 backdrop-blur sm:h-72 lg:mt-0 lg:h-96"
+                >
+                    <div className="grid h-full place-items-center rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-transparent">
+                        <span className="text-sm text-zinc-300/80">
+                            <img src={trendingImg} alt="" />
+                        </span>
+
+                    </div>
+
+                    {/* Floating badges */}
+                    <motion.div
+                        initial={{ y: -6 }}
+                        animate={{ y: 6 }}
+                        transition={{ repeat: Infinity, repeatType: "mirror", duration: 2 }}
+                        className="absolute -left-3 -top-3 rounded-xl border border-white/10 bg-white/10 px-3 py-1.5 text-xs backdrop-blur"
+                    >
+                        Trending
+                    </motion.div>
+                    <motion.div
+                        initial={{ y: 6 }}
+                        animate={{ y: -6 }}
+                        transition={{ repeat: Infinity, repeatType: "mirror", duration: 2.4 }}
+                        className="absolute -right-3 -bottom-3 rounded-xl border border-white/10 bg-white/10 px-3 py-1.5 text-xs backdrop-blur"
+                    >
+                        Editor's Pick
+                    </motion.div>
+                </motion.div>
 
             </div>
 

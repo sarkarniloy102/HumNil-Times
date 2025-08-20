@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 // react icon
-import { FaXmark } from "react-icons/fa6";
+import { FaBlog, FaBlogger, FaNewspaper, FaXmark } from "react-icons/fa6";
 import { FaBars, FaDribbble, FaFacebook, FaTwitter } from "react-icons/fa";
 import { useState } from "react";
 
@@ -24,7 +24,9 @@ const Navbar = () => {
     return (
         <header className="fixed top-0 left-0 right-0 bg-blue-950 text-zinc-200 z-50  shadow-lg">
             <nav className="px-4 py-4 max-w-7xl mx-auto flex justify-between items-center">
-                <a href="/" className="text-xl font-bold text-zinc-200">HumNil <span className="text-orange-400">Times</span></a>
+                <a href="/" className="text-xl font-bold text-zinc-200 flex gap-1 items-center justify-center">
+                    <FaNewspaper className="w-6 h-6 text-zinc-300" />       
+                    <span>HumNil</span> <span className="text-orange-400">Times</span></a>
 
                 {/* navitem for lg screen */}
                 <ul className="hidden md:flex gap-12 text-lg">
