@@ -2,11 +2,12 @@ import { Link } from "react-router-dom";
 // import trendingImg from "../../../assets/about.png";
 /* eslint-disable no-unused-vars */
 import { motion } from "framer-motion";
+import TopicsTicker from "./TopicsTicker";
 
 const Banner = ({ title = "Stay ahead of the story.",
     subtitle = "Breaking news, deep dives, and daily briefs — curated for you.",
-    ctaPrimary = "Start Reading",
-    ctaSecondary = "Subscribe",
+    Primary = "Start Reading",
+    Secondary = "Subscribe",
     onPrimaryClick,
     onSecondaryClick, }) => {
 
@@ -53,31 +54,20 @@ const Banner = ({ title = "Stay ahead of the story.",
                         transition={{ duration: 0.8, delay: 0.35 }}
                         className="mt-8 flex flex-wrap items-center gap-3"
                     >
-                        <button
-                            onClick={onPrimaryClick}
-                            className="rounded-2xl border border-white/10 bg-white/10 px-5 py-2.5 text-sm font-medium backdrop-blur hover:bg-white/15 focus:outline-none focus:ring-2 focus:ring-cyan-300/40 active:scale-[.99]"
-                        >
-                            <Link to="/about">{ctaPrimary}</Link>
+                        <Link to="/about" className="border border-zinc-700 px-4 py-2 rounded-lg hover:bg-zinc-200 hover:text-orange-700 transition-all duration-200 ease-in">{Primary}</Link>
+                        <Link to="/about" className="border border-zinc-700 px-4 py-2 rounded-lg hover:bg-zinc-200 hover:text-orange-700 transition-all duration-200 ease-in">{Secondary}</Link>
 
-
-                        </button>
-                        <button
-                            onClick={onSecondaryClick}
-                            className="rounded-2xl border border-white/10 bg-transparent px-5 py-2.5 text-sm font-medium hover:bg-white/5 focus:outline-none focus:ring-2 focus:ring-cyan-300/40 active:scale-[.99]"
-                        >
-                            {ctaSecondary}
-                        </button>
                     </motion.div>
 
                     {/* Scrolling topics ticker */}
+                    <TopicsTicker />
 
-                    
                 </div>
 
-                {/* Right: device mock / image placeholder */}
-               
+                {/* Right side : image*/}
+
             </div>
-            
+
 
         </section>
 
