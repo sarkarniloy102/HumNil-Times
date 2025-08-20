@@ -8,10 +8,13 @@ function App() {
 
   return (
     <>
-      <Navbar />
-      <Outlet>
-        <Home />
-      </Outlet>
+      <div className="font-inter">
+        <Navbar />
+        <Outlet>
+          <Home />
+        </Outlet>
+      </div>
+
     </>
   )
 }
