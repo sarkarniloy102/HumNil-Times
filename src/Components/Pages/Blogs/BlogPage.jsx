@@ -5,10 +5,19 @@ import BlogCard from "./BlogCard";
 const BlogPage = () => {
 
     const [blogs, setBlogs] = useState([]);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [selectedCategory, setSelectedCategory] = useState(null);
+    const [activeCategory, setActiveCategory] = useState(null);
+    const BlogPerPage = 12;
 
     useEffect(() => {
         async function fetchBlogs() {
-            let url = `http://localhost:5000/blogs`;
+            let url = `http://localhost:5000/blogs?page=${currentPage}&limit=${BlogPerPage}`;
+
+            // filter by category
+            if (selectedCategory) {
+                url += `&category=${selectedCategory}`
+            }
 
             const response = await fetch(url);
             const data = await response.json();
@@ -17,18 +26,33 @@ const BlogPage = () => {
 
         }
         fetchBlogs();
-    }, [])
+    }, [currentPage, BlogPerPage, selectedCategory])
+
+    // page changing 
+    const handlePage = (pageNumber) => {
+        setCurrentPage(pageNumber);
+    }
+
+    const handleCategory = (category) => {
+        setSelectedCategory(category);
+        setCurrentPage(1);
+        setActiveCategory(category);
+    }
     return (
         <div>
             {/* category section */}
             <div>Page Category</div>
             {/* Blog Cards */}
             <div>
-                <BlogCard blogs={blogs} />
+                <BlogCard
+                    blogs={blogs}
+                    currentPage={currentPage}
+                    selectedCategory={selectedCategory}
+                    BlogPerPage={BlogPerPage} />
             </div>
             {/* paginition section will be here */}
             <div>
-             <h2>Paginitions</h2>
+                <h2>Paginitions</h2>
             </div>
 
         </div>
