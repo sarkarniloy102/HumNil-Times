@@ -53,8 +53,8 @@ const Banner = ({ title = "Stay ahead of the story.",
                         transition={{ duration: 0.8, delay: 0.35 }}
                         className="mt-8 flex flex-wrap items-center gap-3"
                     >
-                        <Link to="/about" className="border border-zinc-700 px-4 py-2 rounded-lg hover:bg-zinc-200 hover:text-orange-700 transition-all duration-200 ease-in">{Primary}</Link>
-                        <Link to="/about" className="border border-zinc-700 px-4 py-2 rounded-lg hover:bg-zinc-200 hover:text-orange-700 transition-all duration-200 ease-in">{Secondary}</Link>
+                        <Link to="/about" className="bg-teal-800 px-4 py-2 rounded-lg hover:bg-zinc-200 hover:text-orange-700 transition-all duration-200 ease-in">{Primary}</Link>
+                        <Link to="/about" className="bg-teal-800 px-4 py-2 rounded-lg hover:bg-zinc-200 hover:text-orange-700 transition-all duration-200 ease-in">{Secondary}</Link>
 
                     </motion.div>
 
