@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import BlogCard from "./BlogCard";
 
 
 const BlogPage = () => {
@@ -23,11 +24,11 @@ const BlogPage = () => {
             <div>Page Category</div>
             {/* Blog Cards */}
             <div>
-
+                <BlogCard blogs={blogs} />
             </div>
             {/* paginition section will be here */}
             <div>
-
+             <h2>Paginitions</h2>
             </div>
 
         </div>
