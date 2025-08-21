@@ -16,26 +16,42 @@ const Pagination = ({ onPageChange, blogs, currentPage, BlogPerPage }) => {
         ))
     }
     return (
-        <div>
-            <ul className="flex justify-center items-center list-none m-0 p-0 my-8 flex-wrap gap4">
-                <li className=" cursor-pointer flex justify-center items-center gap-1 mr-3 hover:font-semibold">
-                    <FaAnglesLeft />
+       
+        <div className="w-full">
+            <ul className="flex flex-wrap justify-center items-center list-none m-0 p-0 my-6 gap-2 sm:gap-4 text-sm md:text-base">
+
+                {/* Previous */}
+                <li className="cursor-pointer flex items-center hover:font-semibold">
+                    <FaAnglesLeft className="hidden sm:inline" />
                     <button
                         onClick={() => onPageChange(currentPage - 1)}
                         disabled={currentPage === 1}
-                        className="cursor-pointer">Previous</button>
+                        className="px-2 py-1 sm:px-3 sm:py-1 rounded-md disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                        Previous
+                    </button>
                 </li>
-                <div className="flex gap-2 justify-center items-center">{renderPaginationsLinks()}</div>
-                <li className="  cursor-pointer flex justify-center items-center gap-1 ml-3 hover:font-semibold">
 
+                {/* Pagination numbers */}
+                <div className="flex flex-wrap gap-2 justify-center items-center">
+                    {renderPaginationsLinks()}
+                </div>
+
+                {/* Next */}
+                <li className="cursor-pointer flex items-center hover:font-semibold">
                     <button
                         onClick={() => onPageChange(currentPage + 1)}
                         disabled={currentPage === totalPages}
-                        className="cursor-pointer">Next</button>
-                    <FaAnglesRight />
+                        className="px-2 py-1 sm:px-3 sm:py-1 rounded-md disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                        Next
+                    </button>
+                    <FaAnglesRight className="hidden sm:inline" />
                 </li>
+
             </ul>
         </div>
+
     );
 };
 
