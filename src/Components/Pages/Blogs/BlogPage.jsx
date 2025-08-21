@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import BlogCard from "./BlogCard";
+import Pagination from "./Pagination";
 
 
 const BlogPage = () => {
@@ -50,9 +51,13 @@ const BlogPage = () => {
                     selectedCategory={selectedCategory}
                     BlogPerPage={BlogPerPage} />
             </div>
-            {/* paginition section will be here */}
+            {/* pagination section will be here */}
             <div>
-                <h2>Paginitions</h2>
+                <Pagination
+                    onPageChange={handlePage}
+                    blogs={blogs}
+                    currentPage={currentPage}
+                    BlogPerPage={BlogPerPage} />
             </div>
 
         </div>
