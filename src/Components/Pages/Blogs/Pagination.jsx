@@ -16,7 +16,7 @@ const Pagination = ({ onPageChange, blogs, currentPage, BlogPerPage }) => {
         ))
     }
     return (
-       
+
         <div className="w-full">
             <ul className="flex flex-wrap justify-center items-center list-none m-0 p-0 my-6 gap-2 sm:gap-4 text-sm md:text-base">
 
