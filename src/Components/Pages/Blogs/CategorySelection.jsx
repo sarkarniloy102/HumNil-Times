@@ -1,6 +1,6 @@
 
 
-const CategorySelection = ({ onSelectCategory, selectedCategory, activeCategory }) => {
+const CategorySelection = ({ onSelectCategory, activeCategory }) => {
 
     const categories = ["Health", "Fintech", "Startups", "AI", "Security", "Enterprise", "Growth", "Apps", "Work", "Gadgets", "Tech",]
     return (

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import BlogCard from "./BlogCard";
 import Pagination from "./Pagination";
 import CategorySelection from "./CategorySelection";
+import SideBar from "./SideBar";
 
 
 const BlogPage = () => {
@@ -47,13 +48,22 @@ const BlogPage = () => {
                 onSelectCategory={handleCategory}
                 selectedCategory={selectedCategory}
                 activeCategory={activeCategory} />
+
             {/* Blog Cards */}
-            <div>
-                <BlogCard
-                    blogs={blogs}
-                    currentPage={currentPage}
-                    selectedCategory={selectedCategory}
-                    BlogPerPage={BlogPerPage} />
+            <div className="flex flex-col lg:flex-row gap-12">
+                {/* card component */}
+                <div>
+                    <BlogCard
+                        blogs={blogs}
+                        currentPage={currentPage}
+                        selectedCategory={selectedCategory}
+                        BlogPerPage={BlogPerPage} />
+                </div>
+
+                {/* Sidebar Component */}
+                <div>
+                    <SideBar />
+                </div>
             </div>
             {/* pagination section will be here */}
             <div>
