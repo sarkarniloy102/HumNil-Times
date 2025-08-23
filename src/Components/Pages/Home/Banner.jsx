@@ -12,7 +12,7 @@ const Banner = ({ title = "Stay ahead of the story.",
 
     return (
 
-        <section className="  text-zinc-200 overflow-hidden relative bg-gradient-to-t
+        <section className="  text-white overflow-hidden relative bg-gradient-to-t
          from-teal-950 via-teal-800 to-teal-700">
             <div className="relative z-10 mx-auto max-w-7xl px-6 py-20 sm:py-28 lg:flex lg:items-center lg:gap-10 lg:px-8">
                 {/* Left: Text */}
@@ -43,7 +43,7 @@ const Banner = ({ title = "Stay ahead of the story.",
                         initial={{ y: 10, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
-                        className="mt-4 max-w-xl text-base/7 text-zinc-300 sm:text-lg/8"
+                        className="mt-4 max-w-xl text-base/7 sm:text-lg/8"
                     >
                         {subtitle}
                     </motion.p>

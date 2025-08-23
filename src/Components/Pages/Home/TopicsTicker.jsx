@@ -8,7 +8,7 @@ const TopicsTicker = () => {
                 initial={{ x: 0 }}
                 animate={{ x: "-50%" }}
                 transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-                className="flex min-w-max gap-6 text-xs uppercase tracking-wide text-zinc-300/80"
+                className="flex min-w-max gap-6 text-xs uppercase tracking-wide "
             >
                 {[
                     "Politics", "Business", "Sports", "Entertainment", "World", "Lifestyle", "Science", "Health", "Travel", "StartUps", "Security", "AI", "Apps", "Tech",
