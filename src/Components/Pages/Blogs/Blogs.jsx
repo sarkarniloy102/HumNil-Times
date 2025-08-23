@@ -5,7 +5,8 @@ const Blogs = () => {
     return (
         <div>
             {/*  Blog Banner */}
-            <div className="relative py-40 bg-gradient-to-r from-teal-700 via-teal-800 to-teal-900 text-center text-white px-4 overflow-hidden">
+            <div className="relative py-40 bg-gradient-to-t
+         from-teal-950 via-teal-800 to-teal-500 text-center text-white px-4 overflow-hidden">
 
                 {/* Animated circles */}
                 <div className="absolute top-1/4 left-1/4 w-24 h-24 border-4 border-white/10 rounded-full animate-pulse"></div>

@@ -13,7 +13,7 @@ const Banner = ({ title = "Stay ahead of the story.",
     return (
 
         <section className="  text-white overflow-hidden relative bg-gradient-to-t
-         from-teal-950 via-teal-800 to-teal-700">
+         from-teal-950 via-teal-800 to-teal-500">
             <div className="relative z-10 mx-auto max-w-7xl px-6 py-20 sm:py-28 lg:flex lg:items-center lg:gap-10 lg:px-8">
                 {/* Left: Text */}
                 <div className="max-w-2xl">

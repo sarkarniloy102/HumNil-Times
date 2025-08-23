@@ -49,7 +49,8 @@ const Services = () => {
     return (
         <div className=" pb-16 ">
             {/* Header Section */}
-            <div className="text-center pt-40 py-16 bg-gradient-to-r from-teal-700 to-teal-900 text-white">
+            <div className="text-center pt-40 py-16 bg-gradient-to-t
+         from-teal-950 via-teal-800 to-teal-500 text-white">
                 <FloatingParticles numberOfParticles={200}/>
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
