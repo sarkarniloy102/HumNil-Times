@@ -153,7 +153,7 @@ const SingleBlogDetails = () => {
                     
                     {/* Sidebar - 1/3 width on large screens, full width on small screens */}
                     <div className="lg:w-1/3">
-                        <div className="sticky top-24">
+                        <div className="sticky top-24 ml-10">
                             <SideBar />
                         </div>
                     </div>

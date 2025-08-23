@@ -3,11 +3,13 @@ import { NavLink } from "react-router-dom";
 import { FaBlog, FaBlogger, FaNewspaper, FaXmark } from "react-icons/fa6";
 import { FaBars, FaDribbble, FaFacebook, FaTwitter } from "react-icons/fa";
 import { useState } from "react";
+import Model from "./Model";
 
 
 const Navbar = () => {
 
     const [isBarOpen, setIsBarOpen] = useState(false);
+    const [isModelOpen, setIsModelOpen] = useState(false);
 
     const toggleBar = () => {
         setIsBarOpen(!isBarOpen);
@@ -19,13 +21,20 @@ const Navbar = () => {
         { path: "/about", link: "About" },
         { path: "/blogs", link: "Blogs" },
         { path: "/contact", link: "Contact" },
-    ]
+    ];
 
+    // model details
+    const openModel = () => {
+        setIsModelOpen(true);
+    }
+    const closeModel = () => {
+        setIsModelOpen(false);
+    }
     return (
         <header className="fixed top-0 left-0 right-0 bg-teal-700 text-zinc-200 z-50  shadow-lg">
             <nav className="px-4 py-4 max-w-7xl mx-auto flex justify-between items-center">
                 <a href="/" className="text-xl font-bold text-zinc-200 flex gap-1 items-center justify-center">
-                    <FaNewspaper className="w-6 h-6 text-zinc-300" />       
+                    <FaNewspaper className="w-6 h-6 text-zinc-300" />
                     <span>HumNil</span> <span className="text-orange-400">Times</span></a>
 
                 {/* navitem for lg screen */}
@@ -47,8 +56,13 @@ const Navbar = () => {
                     <a href="/" className="hover:text-purple-400"> <FaDribbble /> </a>
                     <a href="/" className="hover:text-blue-300"> <FaTwitter /> </a>
 
-                    <button className="bg-orange-500 px-6 py-2 font-medium rounded hover:bg-zinc-300 hover:text-orange-700 cursor-pointer transition-all duration-300 ease-in">Log in</button>
+                    <button
+                        onClick={openModel}
+                        className="bg-orange-500 px-6 py-2 font-medium rounded hover:bg-zinc-300 hover:text-orange-700 cursor-pointer transition-all duration-300 ease-in">Log in</button>
                 </div>
+
+                {/* model */}
+                <Model isModelOpen={isModelOpen} closeModel={closeModel} />
 
                 {/* for small screen  */}
                 <div className="md:hidden">
