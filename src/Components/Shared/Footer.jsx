@@ -5,6 +5,7 @@ import { IoIosSend } from 'react-icons/io';
 const Footer = () => {
     return (
         <footer className="bg-gradient-to-b from-gray-900 to-teal-950 text-white pt-16 pb-8 px-4">
+         
             <div className="max-w-7xl mx-auto">
                 {/* Main footer content */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
@@ -149,7 +150,9 @@ const Footer = () => {
                         <a href="#" className="text-gray-500 hover:text-teal-400 text-sm transition-colors">Cookie Policy</a>
                     </div>
                 </div>
+
             </div>
+            
         </footer>
     );
 };
