@@ -50,7 +50,7 @@ const BlogPage = () => {
                 activeCategory={activeCategory} />
 
             {/* Blog Cards */}
-            <div className="flex flex-col lg:flex-row gap-12">
+            <div className="flex flex-col lg:flex-row gap-5">
                 {/* card component */}
                 <div>
                     <BlogCard

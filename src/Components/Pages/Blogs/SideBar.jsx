@@ -1,6 +1,8 @@
+/* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react";
 import { FaRegArrowAltCircleRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const SideBar = () => {
     const [popularNews, setPopularNews] = useState([]);
@@ -9,50 +11,95 @@ const SideBar = () => {
         fetch("http://localhost:5000/blogs")
             .then(res => res.json())
             .then(data => setPopularNews(data.slice(0, 15)));
-    }, [])
+    }, []);
+
     return (
-        <div>
+        <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+            className="space-y-8"
+        >
             {/* Latest news */}
             <div>
-                <h3 className="text-2xl font-semibold px-4">Latest New's</h3>
+                <motion.h3
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.4 }}
+                    className="text-2xl font-semibold px-4 text-teal-800 mb-4"
+                >
+                    Latest News
+                </motion.h3>
                 <div>
-                    {
-                        popularNews.slice(0, 5).map(blog =>
-                            <div key={blog.id}
-                                className="my-5 border-b-2 border-spacing-2 px-4 border-zinc-300">
-                                <h4 className="font-medium mb-1">{blog.title}</h4>
-                                <Link to={`/blogs/${blog.id}`}
-                                    className="text-base pb-4 hover:text-teal-600 inline-flex items-center text-zinc-700">
-                                    Read now
-                                    <FaRegArrowAltCircleRight className=" ml-2" />
-                                </Link>
-                            </div>
-
-                        )
-                    }
+                    {popularNews.slice(0, 5).map((blog, index) => (
+                        <motion.div
+                            key={blog.id}
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.4, delay: index * 0.1 }}
+                            className="my-5 border-b border-gray-200 px-4 pb-4"
+                            whileHover={{ x: 5, transition: { duration: 0.2 } }}
+                        >
+                            <h4 className="font-medium mb-2 text-gray-800 leading-tight">
+                                {blog.title}
+                            </h4>
+                            <Link
+                                to={`/blogs/${blog.id}`}
+                                className="text-base hover:text-teal-600 inline-flex items-center text-teal-700 font-medium transition-colors duration-200"
+                            >
+                                Read now
+                                <motion.span
+                                    whileHover={{ x: 3 }}
+                                    transition={{ duration: 0.2 }}
+                                >
+                                    <FaRegArrowAltCircleRight className="ml-2" />
+                                </motion.span>
+                            </Link>
+                        </motion.div>
+                    ))}
                 </div>
             </div>
+
             {/* Popular news */}
             <div>
-                <h3 className="text-2xl font-semibold px-4 mt-25">Popular New's</h3>
+                <motion.h3
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.4, delay: 0.2 }}
+                    className="text-2xl font-semibold px-4 text-teal-800 mb-4 mt-8"
+                >
+                    Popular News
+                </motion.h3>
                 <div>
-                    {
-                        popularNews.slice(6, 10).map(blog =>
-                            <div key={blog.id}
-                                className="my-5 border-b-2 border-spacing-2 px-4 border-zinc-300">
-                                <h4 className="font-medium mb-1">{blog.title}</h4>
-                                <Link to={`/blogs/${blog.id}`}
-                                    className="text-base pb-4 hover:text-teal-600 inline-flex items-center text-zinc-700">
-                                    Read now
-                                    <FaRegArrowAltCircleRight className=" ml-2" />
-                                </Link>
-                            </div>
-
-                        )
-                    }
+                    {popularNews.slice(6, 10).map((blog, index) => (
+                        <motion.div
+                            key={blog.id}
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
+                            className="my-5 border-b border-gray-200 px-4 pb-4"
+                            whileHover={{ x: 5, transition: { duration: 0.2 } }}
+                        >
+                            <h4 className="font-medium mb-2 text-gray-800 leading-tight">
+                                {blog.title}
+                            </h4>
+                            <Link
+                                to={`/blogs/${blog.id}`}
+                                className="text-base hover:text-teal-600 inline-flex items-center text-teal-700 font-medium transition-colors duration-200"
+                            >
+                                Read now
+                                <motion.span
+                                    whileHover={{ x: 3 }}
+                                    transition={{ duration: 0.2 }}
+                                >
+                                    <FaRegArrowAltCircleRight className="ml-2" />
+                                </motion.span>
+                            </Link>
+                        </motion.div>
+                    ))}
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 };
 
