@@ -34,7 +34,7 @@ const Navbar = () => {
         <header className="fixed top-0 left-0 right-0 text-zinc-200 z-50  shadow-lg bg-gradient-to-r
          from-teal-950 via-teal-800 to-teal-700">
             <nav className="px-4 py-4 max-w-7xl mx-auto flex justify-between items-center">
-                <a href="/" className="text-xl font-bold text-white flex gap-1 items-center justify-center">
+                <a href="/" className="text-xl font-bold text-white flex gap-1 items-center justify-center leading-snug font-serif tracking-tight">
                     <span >HumNil</span> <span className="text-teal-300">Times</span></a>
 
                 {/* navitem for lg screen */}
@@ -44,7 +44,7 @@ const Navbar = () => {
                             <li key={path} className="text-white">
                                 <NavLink
                                     className={({ isActive }) =>
-                                        isActive ? "text-teal-300 underline underline-offset-4" : ""
+                                        isActive ? "text-teal-300 underline underline-offset-4 " : ""
                                     }
                                     to={path}>{link}</NavLink> </li>))
                     }

@@ -8,7 +8,7 @@ const Pagination = ({ onPageChange, blogs, currentPage, BlogPerPage }) => {
         return Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNumber) => (
             <li
                 key={pageNumber}
-                className={pageNumber === currentPage ? "bg-orange-500 rounded-md " : ""} >
+                className={pageNumber === currentPage ? "bg-teal-600 rounded-md " : ""} >
                 <a href="#"
                     className="inline-block border border-zinc-400 px-3 py-1 rounded-md hover:bg-zinc-400"
                     onClick={() => onPageChange(pageNumber)}>{pageNumber}</a>
