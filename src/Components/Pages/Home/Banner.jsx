@@ -12,7 +12,8 @@ const Banner = ({ title = "Stay ahead of the story.",
 
     return (
 
-        <section className=" bg-teal-700 text-zinc-200 overflow-hidden relative">
+        <section className="  text-zinc-200 overflow-hidden relative bg-gradient-to-t
+         from-teal-950 via-teal-800 to-teal-700">
             <div className="relative z-10 mx-auto max-w-7xl px-6 py-20 sm:py-28 lg:flex lg:items-center lg:gap-10 lg:px-8">
                 {/* Left: Text */}
                 <div className="max-w-2xl">
@@ -53,8 +54,8 @@ const Banner = ({ title = "Stay ahead of the story.",
                         transition={{ duration: 0.8, delay: 0.35 }}
                         className="mt-8 flex flex-wrap items-center gap-3"
                     >
-                        <Link to="/about" className="bg-teal-800 px-4 py-2 rounded-lg hover:bg-zinc-200 hover:text-orange-700 transition-all duration-200 ease-in">{Primary}</Link>
-                        <Link to="/about" className="bg-teal-800 px-4 py-2 rounded-lg hover:bg-zinc-200 hover:text-orange-700 transition-all duration-200 ease-in">{Secondary}</Link>
+                        <Link to="/about" className="bg-teal-800 px-4 py-2 rounded-lg hover:bg-zinc-200 hover:text-black transition-all duration-200 ease-in">{Primary}</Link>
+                        <Link to="/about" className="bg-teal-800 px-4 py-2 rounded-lg hover:bg-zinc-200 hover:text-black transition-all duration-200 ease-in">{Secondary}</Link>
 
                     </motion.div>
 

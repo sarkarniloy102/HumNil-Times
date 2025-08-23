@@ -26,10 +26,10 @@ const SingleBlogDetails = () => {
                         <FaArrowLeft className="mr-2" /> Back to Blogs
                     </motion.button>
                 </div>
-                
+
                 {/* Floating Particles */}
                 <FloatingParticles numberOfParticles={500} />
-                
+
                 {/* Banner content*/}
                 <div className="max-w-7xl mx-auto text-center px-4">
                     <motion.span
@@ -150,7 +150,7 @@ const SingleBlogDetails = () => {
                             </div>
                         </motion.div>
                     </div>
-                    
+
                     {/* Sidebar - 1/3 width on large screens, full width on small screens */}
                     <div className="lg:w-1/3">
                         <div className="sticky top-24 ml-10">

@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 // react icon
-import { FaBlog, FaBlogger, FaNewspaper, FaXmark } from "react-icons/fa6";
+import {   FaXmark } from "react-icons/fa6";
 import { FaBars, FaDribbble, FaFacebook, FaTwitter } from "react-icons/fa";
 import { useState } from "react";
 import Model from "./Model";
@@ -31,20 +31,20 @@ const Navbar = () => {
         setIsModelOpen(false);
     }
     return (
-        <header className="fixed top-0 left-0 right-0 bg-teal-700 text-zinc-200 z-50  shadow-lg">
+        <header className="fixed top-0 left-0 right-0 text-zinc-200 z-50  shadow-lg bg-gradient-to-r
+         from-teal-950 via-teal-800 to-teal-700">
             <nav className="px-4 py-4 max-w-7xl mx-auto flex justify-between items-center">
-                <a href="/" className="text-xl font-bold text-zinc-200 flex gap-1 items-center justify-center">
-                    <FaNewspaper className="w-6 h-6 text-zinc-300" />
-                    <span>HumNil</span> <span className="text-orange-400">Times</span></a>
+                <a href="/" className="text-xl font-bold text-white flex gap-1 items-center justify-center">
+                    <span >HumNil</span> <span className="text-teal-300">Times</span></a>
 
                 {/* navitem for lg screen */}
                 <ul className="hidden md:flex gap-12 text-lg">
                     {
                         navItems.map(({ path, link }) => (
-                            <li key={path} className="text-zinc-300">
+                            <li key={path} className="text-white">
                                 <NavLink
                                     className={({ isActive }) =>
-                                        isActive ? "text-orange-400 underline underline-offset-4" : ""
+                                        isActive ? "text-teal-300 underline underline-offset-4" : ""
                                     }
                                     to={path}>{link}</NavLink> </li>))
                     }
@@ -58,7 +58,7 @@ const Navbar = () => {
 
                     <button
                         onClick={openModel}
-                        className="bg-orange-500 px-6 py-2 font-medium rounded hover:bg-zinc-300 hover:text-orange-700 cursor-pointer transition-all duration-300 ease-in">Log in</button>
+                        className="bg-teal-950 px-6 py-2 font-medium rounded hover:bg-zinc-300 hover:text-black cursor-pointer transition-all duration-300 ease-in">Log in</button>
                 </div>
 
                 {/* model */}

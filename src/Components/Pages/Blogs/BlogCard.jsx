@@ -21,7 +21,7 @@ const BlogCard = ({ blogs,currentPage,selectedCategory,BlogPerPage }) => {
                                 alt="blog image"
                                 className="w-full" />
                         </div>
-                        <h3 className="mt-4 mb-2 font-bold hover:text-blue-600 cursor-pointer">{blog.title}</h3>
+                        <h3 className="mt-4 mb-2 font-bold hover:text-teal-700 cursor-pointer">{blog.title}</h3>
                         <p className="mb-2text-gray-600">
                             <FaUser className="inline-flex items-center mr-2" />
                             {blog.author}</p>
