@@ -17,27 +17,30 @@ const BlogPage = () => {
     const BlogPerPage = 12;
 
     useEffect(() => {
-        async function fetchAllBlogs() {
+        async function fetchBlogs() {
+            setLoading(true);
+            let url = `https://hum-nil-times-server.vercel.app/blogs?page=${currentPage}&limit=${BlogPerPage}`;
+
+            // filter by category
+            if (selectedCategory) {
+                url += `&category=${selectedCategory}`;
+            }
+
             try {
-                setLoading(true);
-                setError(null);
-
-                const response = await axios.get(
-                    "https://raw.githubusercontent.com/sarkarniloy102/HumNil-Times-server/main/api/blogsData.json"
-                );
-
+                const response = await axios.get(url);
                 setBlogs(response.data);
             } catch (err) {
-                setError("Failed to fetch blogs. Please try again later.");
+                setError(err);
                 console.error("Error fetching blogs:", err);
-                alert(error);
+                console.log(error);
             } finally {
                 setLoading(false);
             }
         }
 
-        fetchAllBlogs();
-    }, [error])
+        fetchBlogs();
+    }, [currentPage, BlogPerPage, selectedCategory,error]);
+
 
     // page changing 
     const handlePage = (pageNumber) => {

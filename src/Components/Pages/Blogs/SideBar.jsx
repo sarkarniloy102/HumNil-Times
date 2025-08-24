@@ -3,14 +3,25 @@ import { useEffect, useState } from "react";
 import { FaRegArrowAltCircleRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import axios from "axios";
 
 const SideBar = () => {
     const [popularNews, setPopularNews] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:5000/blogs")
-            .then(res => res.json())
-            .then(data => setPopularNews(data.slice(0, 15)));
+        async function fetchPopularNews() {
+            try {
+                const response = await axios.get(
+                    "https://hum-nil-times-server.vercel.app/blogs"
+                );
+                // take first 15 items
+                setPopularNews(response.data.slice(0, 15));
+            } catch (err) {
+                console.error("Error fetching popular news:", err);
+            }
+        }
+
+        fetchPopularNews();
     }, []);
 
     return (
@@ -45,7 +56,7 @@ const SideBar = () => {
                             </h4>
                             <Link
                                 to={`/blogs/${blog.id}`}
-                                className="text-base hover:text-teal-600 inline-flex items-center text-teal-700 font-medium transition-colors duration-200"
+                                className="text-base hover:text-teal-600 inline-flex items-center text-zinc-500 font-medium transition-colors duration-200"
                             >
                                 Read now
                                 <motion.span
@@ -85,7 +96,7 @@ const SideBar = () => {
                             </h4>
                             <Link
                                 to={`/blogs/${blog.id}`}
-                                className="text-base hover:text-teal-600 inline-flex items-center text-teal-700 font-medium transition-colors duration-200"
+                                className="text-base hover:text-teal-600 inline-flex items-center text-zinc-500 font-medium transition-colors duration-200"
                             >
                                 Read now
                                 <motion.span
