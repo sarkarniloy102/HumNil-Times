@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaPaperPlane, FaClock } from 'react-icons/fa';
 import emailjs from 'emailjs-com';
 import { containerVariants, itemVariants, fadeInUp } from '../Shared/MotionVarient';
+import FloatingParticles from '../Shared/FloatingParticle';
 
 const Contact = () => {
     const formRef = useRef();
@@ -76,9 +77,10 @@ const Contact = () => {
     ];
 
     return (
-        <div className="pt-24 pb-16 bg-gradient-to-b from-gray-50 to-white min-h-screen">
+        <div className=" ">
             {/* Hero Section */}
-            <div className="text-center py-16 bg-gradient-to-r from-teal-700 to-teal-900 text-white">
+            <div className="pt-30 text-center py-16 bg-gradient-to-t
+         from-teal-950 via-teal-800 to-teal-500 text-white">
                 <motion.div
                     variants={fadeInUp}
                     initial="hidden"
@@ -90,6 +92,7 @@ const Contact = () => {
                         We'd love to hear from you. Send us a message and we'll respond as soon as possible.
                     </p>
                 </motion.div>
+                <FloatingParticles numberOfParticles={200}/>
             </div>
 
             <div className="max-w-7xl mx-auto px-4 py-16">

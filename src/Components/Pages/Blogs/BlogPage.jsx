@@ -3,6 +3,7 @@ import BlogCard from "./BlogCard";
 import Pagination from "./Pagination";
 import CategorySelection from "./CategorySelection";
 import SideBar from "./SideBar";
+import axios from "axios";
 
 
 const BlogPage = () => {
@@ -11,25 +12,32 @@ const BlogPage = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [selectedCategory, setSelectedCategory] = useState(null);
     const [activeCategory, setActiveCategory] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
     const BlogPerPage = 12;
 
     useEffect(() => {
-        async function fetchBlogs() {
-            let url = `http://localhost:5000/blogs?page=${currentPage}&limit=${BlogPerPage}`;
+        async function fetchAllBlogs() {
+            try {
+                setLoading(true);
+                setError(null);
 
-            // filter by category
-            if (selectedCategory) {
-                url += `&category=${selectedCategory}`
+                const response = await axios.get(
+                    "https://raw.githubusercontent.com/sarkarniloy102/HumNil-Times-server/main/api/blogsData.json"
+                );
+
+                setBlogs(response.data);
+            } catch (err) {
+                setError("Failed to fetch blogs. Please try again later.");
+                console.error("Error fetching blogs:", err);
+                alert(error);
+            } finally {
+                setLoading(false);
             }
-
-            const response = await fetch(url);
-            const data = await response.json();
-            console.log(data);
-            setBlogs(data);
-
         }
-        fetchBlogs();
-    }, [currentPage, BlogPerPage, selectedCategory])
+
+        fetchAllBlogs();
+    }, [error])
 
     // page changing 
     const handlePage = (pageNumber) => {
@@ -40,6 +48,13 @@ const BlogPage = () => {
         setSelectedCategory(category);
         setCurrentPage(1);
         setActiveCategory(category);
+    }
+    if (loading) {
+        return (
+            <div className="flex justify-center items-center min-h-screen">
+                <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-teal-500"></div>
+            </div>
+        );
     }
     return (
         <div>

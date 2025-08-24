@@ -36,7 +36,7 @@ export const router = createBrowserRouter([
             {
                 path: "/blogs/:id",
                 element: <SingleBlogDetails />,
-                loader: ({ params }) => fetch(`http://localhost:5000/blogs/${params.id}`)
+                loader: ({ params }) => fetch(`https://raw.githubusercontent.com/sarkarniloy102/HumNil-Times-server/main/api/blogsData.json/blogs/${params.id}`)
             }
         ]
     },
