@@ -53,7 +53,7 @@ const Contact = () => {
         {
             icon: <FaPhone className="text-2xl text-teal-600" />,
             title: "Phone",
-            details: "+1 (555) 123-4567",
+            details: "+880 12345567890",
             description: "Mon to Fri 9am to 6pm"
         },
         {
@@ -223,7 +223,7 @@ const Contact = () => {
                                     value={formData.message}
                                     onChange={handleChange}
                                     required
-                                    rows="5"
+                                    rows="7"
                                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors"
                                     placeholder="Tell us how we can help you..."
                                 />

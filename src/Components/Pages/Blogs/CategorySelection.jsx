@@ -12,8 +12,8 @@ const CategorySelection = ({ onSelectCategory, activeCategory }) => {
                 <button
                     onClick={() => onSelectCategory(null)}
                     className={`px-3 py-1 rounded-lg transition-all duration-200 ${!activeCategory
-                            ? "bg-teal-600 text-white shadow-md"
-                            : "hover:bg-gray-100 hover:text-teal-700"
+                        ? "bg-teal-600 text-white shadow-md"
+                        : "hover:bg-gray-100 hover:text-teal-700"
                         }`}
                 >
                     All
@@ -24,8 +24,8 @@ const CategorySelection = ({ onSelectCategory, activeCategory }) => {
                         onClick={() => onSelectCategory(category)}
                         key={idx}
                         className={`px-3 py-1 rounded-lg transition-all duration-200 ${activeCategory === category
-                                ? "bg-teal-600 text-white shadow-md"
-                                : "hover:bg-gray-100 hover:text-teal-700"
+                            ? "bg-teal-600 text-white shadow-md"
+                            : "hover:bg-gray-100 hover:text-teal-700"
                             }`}
                     >
                         {category}
@@ -51,8 +51,8 @@ const CategorySelection = ({ onSelectCategory, activeCategory }) => {
                                 setIsDropdownOpen(false);
                             }}
                             className={`w-full text-left px-4 py-3 transition-colors duration-200 ${!activeCategory
-                                    ? "bg-teal-100 text-teal-700 font-semibold"
-                                    : "hover:bg-gray-50"
+                                ? "bg-teal-100 text-teal-700 font-semibold"
+                                : "hover:bg-gray-50"
                                 }`}
                         >
                             All Categories
@@ -66,8 +66,8 @@ const CategorySelection = ({ onSelectCategory, activeCategory }) => {
                                     setIsDropdownOpen(false);
                                 }}
                                 className={`w-full text-left px-4 py-3 transition-colors duration-200 border-t border-gray-100 ${activeCategory === category
-                                        ? "bg-teal-100 text-teal-700 font-semibold"
-                                        : "hover:bg-gray-50"
+                                    ? "bg-teal-100 text-teal-700 font-semibold"
+                                    : "hover:bg-gray-50"
                                     }`}
                             >
                                 {category}
